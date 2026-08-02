@@ -141,9 +141,9 @@ const faqList = [
 ];
 
 const heroSlides = [
-  { img: '/images/company/company-product-range.jpg', alt: 'Monika Engineers industrial automation product range', caption: '30 years of automation products and support', position: 'right center' },
-  { img: '/images/company/plc-motion-control.jpg', alt: 'PLC and motion-control products supplied by Monika Engineers', caption: 'PLC and motion-control solutions', position: 'right center' },
-  { img: '/images/company/servo-motor-drives.jpg', alt: 'Servo motors and drive systems supplied by Monika Engineers', caption: 'Servo motors and drive systems', position: 'right center' },
+  { img: '/images/company/company-product-range.jpg', alt: 'Monika Engineers industrial automation product range', caption: '30 years of automation products and support' },
+  { img: '/images/company/plc-motion-control.jpg', alt: 'PLC and motion-control products supplied by Monika Engineers', caption: 'PLC and motion-control solutions' },
+  { img: '/images/company/servo-motor-drives.jpg', alt: 'Servo motors and drive systems supplied by Monika Engineers', caption: 'Servo motors and drive systems' },
 ];
 
 const googleReviews = [
@@ -554,9 +554,11 @@ function App() {
             </div>
 
             <div className="hero-media" aria-live="polite">
-              {heroSlides.map((slide, i) => (
-                <img key={slide.img} src={slide.img} alt={slide.alt} className={`hero-media__image${i === slideIdx ? ' is-active' : ''}`} style={{ objectPosition: slide.position }} loading={i === 0 ? 'eager' : 'lazy'} />
-              ))}
+              <div className="hero-media__stage">
+                {heroSlides.map((slide, i) => (
+                  <img key={slide.img} src={slide.img} alt={slide.alt} className={`hero-media__image${i === slideIdx ? ' is-active' : ''}`} loading={i === 0 ? 'eager' : 'lazy'} />
+                ))}
+              </div>
               <div className="hero-media__bar">
                 <span>{heroSlides[slideIdx].caption}</span>
                 <span className="hero-media__count">{String(slideIdx + 1).padStart(2, '0')} / {String(heroSlides.length).padStart(2, '0')}</span>
