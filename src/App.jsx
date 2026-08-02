@@ -141,9 +141,9 @@ const faqList = [
 ];
 
 const heroSlides = [
-  { img: '/images/hero/automation-hmi-panels.webp', alt: 'PLC and HMI control panels wired and ready for commissioning', caption: 'PLCs, HMIs and control panel builds' },
-  { img: '/images/hero/automation-engineer-panel.webp', alt: 'Engineer working on an industrial machine control panel', caption: 'Control panels and field support' },
-  { img: '/images/hero/automation-factory-line.webp', alt: 'Automated production line with PLC-controlled machine stations', caption: 'Integrated factory automation' },
+  { img: '/images/company/company-product-range.jpg', alt: 'Monika Engineers industrial automation product range', caption: '30 years of automation products and support', position: 'right center' },
+  { img: '/images/company/plc-motion-control.jpg', alt: 'PLC and motion-control products supplied by Monika Engineers', caption: 'PLC and motion-control solutions', position: 'right center' },
+  { img: '/images/company/servo-motor-drives.jpg', alt: 'Servo motors and drive systems supplied by Monika Engineers', caption: 'Servo motors and drive systems', position: 'right center' },
 ];
 
 const googleReviews = [
@@ -555,7 +555,7 @@ function App() {
 
             <div className="hero-media" aria-live="polite">
               {heroSlides.map((slide, i) => (
-                <img key={slide.img} src={slide.img} alt={slide.alt} className={`hero-media__image${i === slideIdx ? ' is-active' : ''}`} loading={i === 0 ? 'eager' : 'lazy'} />
+                <img key={slide.img} src={slide.img} alt={slide.alt} className={`hero-media__image${i === slideIdx ? ' is-active' : ''}`} style={{ objectPosition: slide.position }} loading={i === 0 ? 'eager' : 'lazy'} />
               ))}
               <div className="hero-media__bar">
                 <span>{heroSlides[slideIdx].caption}</span>
@@ -602,7 +602,7 @@ function App() {
         <section className="section" id="about">
           <div className="container about__grid">
             <Reveal className="about__media">
-              <img src="/images/about-industrial.webp" alt="Industrial machine control and automation equipment" loading="lazy" />
+              <img src="/images/home-about.jpg" alt="Factory automation data displayed beside an industrial production line" loading="lazy" />
             </Reveal>
             <Reveal className="about__copy" delay={120}>
               <span className="eyebrow">Who we are</span>
@@ -677,7 +677,8 @@ function App() {
               </a>
             </div>
             <Reveal className="repair__media" delay={100}>
-              <img src="/images/service-industrial.webp" alt="Industrial automation production system" loading="lazy" />
+              <img src="/images/company/drive-board-repair.jpg" alt="Technician soldering an industrial drive circuit board" loading="lazy" />
+              <img src="/images/company/automation-parts-stock.jpg" alt="Automation components stocked on workshop shelves" loading="lazy" />
             </Reveal>
           </div>
         </section>
